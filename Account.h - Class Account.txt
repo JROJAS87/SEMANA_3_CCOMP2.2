@@ -1,0 +1,52 @@
+//Account.h
+
+#include <iostream>
+#include <string>
+using namespace std;
+
+class Account {
+public:
+  // Constructor para inicializar solo el nombre
+  explicit Account(std::string accountName) : name{accountName}, balance{0.0} {}
+
+  // Constructor para inicializar nombre y balance
+  Account(std::string accountName, double initialBalance) : name{accountName} {
+    if (initialBalance >= 0) {
+      balance = initialBalance;
+    } else {
+      balance = 0; // Si el balance es negativo, lo establecemos a 0
+    }
+  }
+
+  // Funciones para manejar el nombre
+  void setName(std::string accountName) { name = accountName; }
+  std::string getName() const { return name; }
+
+  // Funciones para depositar
+  void deposit(double amount) {
+    if (amount > 0) {
+      balance += amount;
+    }
+  }
+
+  // Funciones para retirar
+  void withdraw(double amount) {
+    if (amount > 0 && amount <= balance) {
+      balance -= amount;
+    } else {
+      cout << "No se puede retirar esa cantidad" << endl;
+    }
+  }
+
+  // Función para obtener el balance
+  double getBalance() const { return balance; }
+  void setBalance(double newBalance) {
+    if (newBalance >= 0) {
+      balance = newBalance;
+    }
+  }
+
+private:
+  std::string name;
+  double balance{0.0}; // Iniciar el balance en 0.0 por defecto
+};

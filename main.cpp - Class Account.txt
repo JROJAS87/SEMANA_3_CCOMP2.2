@@ -1,0 +1,92 @@
+//main.cpp
+
+#include "Account.h"
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+int main() {
+  // Cuenta 1
+  Account myAccount1{"Cuenta 1"};
+
+  // Nombre de Cuenta 1
+  cout << "El nombre inicial de la Cuenta_1 es: " << myAccount1.getName();
+  cout << "\nPor favor, ingrese el nombre de la Cuenta_1: ";
+  string theName1;
+  getline(cin, theName1);
+  myAccount1.setName(theName1);
+
+  // Balance de Cuenta 1
+  cout << "\nEl monto inicial de la Cuenta_1 es: " << myAccount1.getBalance();
+  cout << "\nPor favor, ingrese el monto de la Cuenta_1: ";
+  double theBalance1;
+  cin >> theBalance1;
+  myAccount1.setBalance(theBalance1);
+
+  // Depositar en Cuenta 1
+  cout << "\nEl monto actual de la Cuenta_1 es: " << myAccount1.getBalance();
+  cout << "\nPor favor, ingrese el monto a depositar en la Cuenta_1: ";
+  double depositAmount1;
+  cin >> depositAmount1;
+  myAccount1.deposit(depositAmount1);
+
+  // Imprimir Nombre y Balance de Cuenta 1
+  cout << "\nEl nombre en el objeto myAccount1 es: " << myAccount1.getName()
+       << endl;
+  cout << "El balance en el objeto myAccount1 es: " << myAccount1.getBalance()
+       << endl;
+
+  // Retirar de Cuenta 1
+  cout << "\nEl monto actual de la Cuenta_1 es: " << myAccount1.getBalance();
+  cout << "\nPor favor, ingrese el monto a retirar en la Cuenta_1: ";
+  double withdrawAmount1;
+  cin >> withdrawAmount1;
+  myAccount1.withdraw(withdrawAmount1);
+  cout << "El balance en el objeto myAccount1 es: " << myAccount1.getBalance()
+       << endl;
+
+  // Crear Cuenta 2
+  Account myAccount2{"Cuenta 2"};
+  cout << "\n\nEl nombre inicial de la Cuenta_2 es: " << myAccount2.getName();
+
+  // Limpiar el buffer de entrada
+  cin.ignore();
+
+  // Nombre de Cuenta 2
+  cout << "\nPor favor, ingrese el nombre de la Cuenta_2: ";
+  string theName2;
+  getline(cin, theName2);
+  myAccount2.setName(theName2);
+
+  // Balance de Cuenta 2
+  cout << "\nEl monto inicial de la Cuenta_2 es: " << myAccount2.getBalance();
+  cout << "\nPor favor, ingrese el monto de la Cuenta_2: ";
+  double theBalance2;
+  cin >> theBalance2;
+  myAccount2.setBalance(theBalance2);
+
+  // Depositar en Cuenta 2
+  cout << "\nEl monto actual de la Cuenta_2 es: " << myAccount2.getBalance();
+  cout << "\nPor favor, ingrese el monto a depositar en la Cuenta_2: ";
+  double depositAmount2;
+  cin >> depositAmount2;
+  myAccount2.deposit(depositAmount2);
+
+  // Imprimir Nombre y Balance de Cuenta 2
+  cout << "\nEl nombre en el objeto myAccount2 es: " << myAccount2.getName()
+       << endl;
+  cout << "El balance en el objeto myAccount2 es: " << myAccount2.getBalance()
+       << endl;
+
+  // Retirar de Cuenta 2
+  cout << "\nEl monto actual de la Cuenta_2 es: " << myAccount2.getBalance();
+  cout << "\nPor favor, ingrese el monto a retirar en la Cuenta_2: ";
+  double withdrawAmount2;
+  cin >> withdrawAmount2;
+  myAccount2.withdraw(withdrawAmount2);
+  cout << "El balance en el objeto myAccount2 es: " << myAccount2.getBalance()
+       << endl;
+
+  return 0;
+}
